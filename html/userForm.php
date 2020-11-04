@@ -14,10 +14,10 @@
             <legend>
                 Flight Form
             </legend>
-            From:<input type="text" placeholder=""/><br>
-            To:<input type="text" placeholder=""><br>
-            Date:<input type="date" placeholder=""><br>
-            Time:<input type="number" placeholder=""/><br>
+            From:<input type="text" name="cFrom" placeholder=""/><br>
+            To:<input type="text" name="cTo" placeholder=""><br>
+            Date:<input type="date" name="dateF" placeholder=""><br>
+            Time:<input type="number" name="timeF" placeholder=""/><br>
         </fieldset>
         <input type="submit" name="register"/>
         <fieldset id="fs">
@@ -25,21 +25,22 @@
                 User Form
             </legend>
             Passport Number:  <input type="text" placeholder="Passport Number"/><br>
-            Full name:  <input type="text" placeholder="Full Name"/><br>
-            Age: <input type="number" placeholder="##"/><br>
-            Citizenship: <input type="text" placeholder="ES"/><br>
-            Phone number: <input type="number" placeholder="000000"><br>
-            Email: <input type="email" placeholder="xxxx@xxxx.xxx"><br>
+            Names:  <input type="text" name="names"placeholder="Name"/><br>
+            Surname:  <input type="text" name="surname"placeholder="Name"/><br>
+            Age: <input type="number" name="age" placeholder="##"/><br>
+            Citizenship: <input type="text" name="citizen" placeholder="ES"/><br>
+            Phone number: <input type="number" name="phone" placeholder="000000"><br>
+            Email: <input type="email" name="email" placeholder="xxxx@xxxx.xxx"><br>
         </fieldset>
         <input type="submit" name="register"/>
         <fieldset id="fs">
             <legend>
                 Ticket Form
             </legend>
-            Seat:<input type="text" placeholder="Seat"/><br>
-            Price: <input type="number" placeholder="$0.00"/><br>
-            Class: <input type="text" placeholder="Class"/><br>
-            Passport Number:  <input type="text" placeholder="Passport Number"/><br>
+            Seat:<input type="text" name="seat" placeholder="Seat"/><br>
+            Price: <input type="number" name="price" placeholder="$0.00"/><br>
+            Class: <input type="text" name="class" placeholder="Class"/><br>
+            Passport Number:  <input type="text" name="passnumber" placeholder="Passport Number"/><br>
         </fieldset>
         <input type="submit" name="register"/>
     </form>
