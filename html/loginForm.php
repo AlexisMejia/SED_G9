@@ -9,9 +9,12 @@
 <body>
     <form method="POST">
         <h1>Welcome</h1>
-        <input type="text" name="name" placeholder="User"/>
-        <input type="text" name="password" placeholder="*******"/>
+        <input type="text" name="user" placeholder="User"/>
+        <input type="text" name="password" placeholder="******">
         <input type="submit" name="register"/>
     </form>
+    <?php
+    include("../php/register.php");
+    ?>
 </body>
 </html>
