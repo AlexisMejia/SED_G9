@@ -19,12 +19,12 @@
             Date:<input type="date" name="dateF" placeholder=""><br>
             Time:<input type="number" name="timeF" placeholder=""/><br>
         </fieldset>
-        <input type="submit" name="register"/>
+        <input type="submit" name="registerF"/>
         <fieldset id="fs">
             <legend>
                 User Form
             </legend>
-            Passport Number:  <input type="text" placeholder="Passport Number"/><br>
+            Passport Number:  <input type="text" name="pssN" placeholder="Passport Number"/><br>
             Names:  <input type="text" name="names"placeholder="Name"/><br>
             Surname:  <input type="text" name="surname"placeholder="Name"/><br>
             Age: <input type="number" name="age" placeholder="##"/><br>
@@ -32,7 +32,7 @@
             Phone number: <input type="number" name="phone" placeholder="000000"><br>
             Email: <input type="email" name="email" placeholder="xxxx@xxxx.xxx"><br>
         </fieldset>
-        <input type="submit" name="register"/>
+        <input type="submit" name="registerU"/>
         <fieldset id="fs">
             <legend>
                 Ticket Form
@@ -42,7 +42,10 @@
             Class: <input type="text" name="class" placeholder="Class"/><br>
             Passport Number:  <input type="text" name="passnumber" placeholder="Passport Number"/><br>
         </fieldset>
-        <input type="submit" name="register"/>
+        <input type="submit" name="registerT"/>
     </form>
+    <?php
+    include("../php/register.php");
+    ?>
 </body>
 </html>
