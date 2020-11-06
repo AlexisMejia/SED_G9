@@ -1,6 +1,8 @@
 <?php 
 include("db_cnt.php");
 
+
+//saving data from register to database
 if (isset($_POST['register'])) {
     if (strlen($_POST['user']) >= 1 && strlen($_POST['password']) >= 1) {
         $user = trim($_POST['user']);
@@ -23,8 +25,45 @@ if (isset($_POST['register'])) {
     }
 }
 
+if (isset($_POST['registerF'])) {
+    if (strlen($_POST['cFrom']) >= 1 &&
+    strlen($_POST['cTo']) >= 1 
+    && strlen($_POST['dateF']) >= 1
+    && strlen($_POST['timeF']) >= 1 ) {
+        $from = trim($_POST['cFrom']);
+        $to = trim($_POST['cTo']);
+        $date= trim($_POST['dateF']);
+        $time = trim($_POST['timeF']);
+        $query = "INSERT INTO vuelo(pais_origen,pais_llegada,fecha_reg,hora_vuelo)
+                    VALUES ('$from','$to','$date','$time')";
+        $resultado = mysqli_query($conex,$query);
+        if ($resultado) {
+            ?> 
+            echo "<script>
+                        alert('¡Te has inscrito correctamente!');
+                        window.location= 'userForm.php'
+                </script>";
+            <?php
+        } else {
+            ?>  
+            echo "<script>
+                        alert('¡Ups ha ocurrido un error!');
+                        window.location= 'flightForm.php'
+                </script>";
+            <?php
+        }
+    }   else {
+        ?>  
+        echo "<script>
+                    alert('¡Por favor complete los campos!');
+                    window.location= 'flightForm.php'
+            </script>";
+        <?php
+    }
+}
 
 
+//saving data from user to database
 if(isset($_POST['registerU'])){
     if(strlen($_POST['pssN']) >= 1 && strlen($_POST['names']) >= 1 
     && strlen($_POST['surname']) >= 1 && strlen($_POST['age']) >= 1 
@@ -42,18 +81,60 @@ if(isset($_POST['registerU'])){
         $resultado = mysqli_query($conex,$query);
         if ($resultado) {
             ?> 
-            <h3 class="ok">¡Te has inscrito correctamente!</h3>
+            echo "<script>
+                        alert('¡Te has inscrito correctamente!');
+                        window.location= 'ticketForm.php'
+                </script>";
             <?php
         } else {
-            ?> 
-            <h3 class="bad">¡Ups ha ocurrido un error!</h3>
+            ?>  
+            echo "<script>
+                        alert('¡Ups ha ocurrido un error!');
+                        window.location= 'userForm.php'
+                </script>";
             <?php
         }
     }   else {
+        ?>  
+        echo "<script>
+                    alert('¡Por favor complete los campos!');
+                    window.location= 'userForm.php'
+            </script>";
+        <?php
+    }   
+}
+
+//saving data from ticket to database
+if (isset($_POST['registerT'])) {
+    if (strlen($_POST['seat']) >= 1 && strlen($_POST['price']) >= 1 && strlen($_POST['class']) >= 1 && strlen($_POST['passnumber']) >= 1) {
+        $seat = trim($_POST['seat']);
+        $price = trim($_POST['price']);
+        $class = trim($_POST['class']);
+        $pssn = trim($_POST['passnumber']);
+        $query = "INSERT INTO tciket(asiento, precio,clase,passport) VALUES ('$seat','$price','$class','$pssn')";
+        $resultado = mysqli_query($conex,$query);
+        if ($resultado) {
             ?> 
-            <h3 class="bad">¡Por favor complete los campos!</h3>
+            echo "<script>
+                        alert('¡Te has inscrito correctamente!');
+                        window.location= 'ticketForm.php'
+                </script>";
             <?php
+        } else {
+            ?>  
+            echo "<script>
+                        alert('¡Ups ha ocurrido un error!');
+                        window.location= 'ticketForm.php'
+                </script>";
+            <?php
+        }
+    }   else {
+        ?>  
+        echo "<script>
+                    alert('¡Por favor complete los campos!');
+                    window.location= 'ticketForm.php'
+            </script>";
+        <?php
     }
-        
 }
 ?>
