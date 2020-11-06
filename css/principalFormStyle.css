@@ -17,6 +17,11 @@ legend{
     border: solid;
 }
 
+#select, #opCF{
+	width: 100%;
+	height: 10em;
+}
+
 input{
 	width: calc(100% - 20px);
 	padding: 9px;
@@ -32,4 +37,19 @@ input[type='submit']{
 	margin: 0 10%;
 	margin-top: 22px;
 	border: none;
+}
+
+.ok {
+	text-align: center;
+	width: 100%;
+	padding: 12px;
+	background-color: #1e6;
+	color: #fff
+}
+.bad {
+	text-align: center;
+	width: 100%;
+	padding: 12px;
+	background-color: #a22;
+	color: #fff
 }
