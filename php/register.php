@@ -117,7 +117,8 @@ if (isset($_POST['registerT'])) {
             ?> 
             echo "<script>
                         alert('¡Te has inscrito correctamente!');
-                        window.location= 'ticketForm.php'
+                        alert('Gracias por usar nuestro sistema')
+                        window.location= 'loginForm.php'
                 </script>";
             <?php
         } else {
