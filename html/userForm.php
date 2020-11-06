@@ -12,16 +12,6 @@
         Below is a form to take your traveler information, please fill it out </h2>
         <fieldset id="fs">
             <legend>
-                Flight Form
-            </legend>
-            From:<input type="text" name="cFrom" placeholder=""/><br>
-            To:<input type="text" name="cTo" placeholder=""><br>
-            Date:<input type="date" name="dateF" placeholder=""><br>
-            Time:<input type="number" name="timeF" placeholder=""/><br>
-        </fieldset>
-        <input type="submit" name="registerF"/>
-        <fieldset id="fs">
-            <legend>
                 User Form
             </legend>
             Passport Number:  <input type="text" name="pssN" placeholder="Passport Number"/><br>
@@ -33,16 +23,6 @@
             Email: <input type="email" name="email" placeholder="xxxx@xxxx.xxx"><br>
         </fieldset>
         <input type="submit" name="registerU"/>
-        <fieldset id="fs">
-            <legend>
-                Ticket Form
-            </legend>
-            Seat:<input type="text" name="seat" placeholder="Seat"/><br>
-            Price: <input type="number" name="price" placeholder="$0.00"/><br>
-            Class: <input type="text" name="class" placeholder="Class"/><br>
-            Passport Number:  <input type="text" name="passnumber" placeholder="Passport Number"/><br>
-        </fieldset>
-        <input type="submit" name="registerT"/>
     </form>
     <?php
     include("../php/register.php");
