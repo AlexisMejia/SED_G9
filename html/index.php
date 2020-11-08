@@ -23,6 +23,7 @@
             <th>Seat</th>
             <th>Price</th>
             <th>Class</th>
+            <th>Action</th>
         </tr>
     </thead>
     <thbody>
@@ -31,7 +32,7 @@
         $result_tasks = mysqli_query($conex, $query);    
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
         <tr>
-        <td><?php echo $row['idVuelo']; ?></td>
+        <td><?php echo $row['id']; ?></td>
         <td><?php echo $row['passp_user']; ?></td>
         <td><?php echo $row['name_user']; ?></td>
         <td><?php echo $row['age_user']; ?><td>
@@ -40,10 +41,15 @@
         <td><?php echo $row['pais_origen']; ?></td>
         <td><?php echo $row['pais_llegada']; ?></td>
         <td><?php echo $row['fecha_reg']; ?></td>
-        <td><?php echo $row['hora_vuelo']; ?></tdtype=>
+        <td><?php echo $row['hora_vuelo']; ?></td>
         <td><?php echo $row['asiento']; ?></td>
         <td><?php echo $row['precio']; ?></td>
         <td><?php echo $row['clase']; ?></td>
+        <td>
+        <a href="delete.php?id=<?php echo $row['id']?>">
+        <input type="submit" name="registerF" value="Delete"/>
+        </a>
+        </td>
         </tr>
         <?php } ?>
     </thbody>
