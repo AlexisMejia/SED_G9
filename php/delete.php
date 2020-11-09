@@ -9,7 +9,7 @@ if(isset($_GET['id'])) {
         ?>
         echo "<script>
             alert('Dato borrado con exito');
-            window.location='index.php'
+            window.location='../html/index.php'
             </script>"
         <?php 
     }else{
