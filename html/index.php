@@ -7,7 +7,7 @@
     <link href="../css/indexStyle.css" rel="stylesheet" type="text/css">
     <title>Principal View</title>
 </head>
-<?php include("../php/db_cnt.php"); ?>
+<?php include("../php/db_cnt.php"); include("../php/hack.php");?>
 
 <body>
     <a href="createForm.php">
@@ -16,7 +16,6 @@
     <table id="airportID" width="100%">
         <thead>
             <tr>
-                <th id="title">Id</th>
                 <th id="title">Passport</th>
                 <th id="title">Name</th>
                 <th id="title">Age</th>
@@ -37,8 +36,7 @@
         $query = "SELECT * FROM form2";
         $result_tasks = mysqli_query($conex, $query);    
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
-            <tr>
-                <td class="info"><?php echo $row['id']; ?></td>
+            <tr align="center">
                 <td class="info"><?php echo $row['passp_user']; ?></td>
                 <td class="info"><?php echo $row['name_user']; ?></td>
                 <td class="info"><?php echo $row['age_user']; ?></td>

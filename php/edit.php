@@ -1,5 +1,6 @@
 <?php 
 include("db_cnt.php");
+include("../php/hack.php");
 
 $pssN ='';
 $name =''; 
