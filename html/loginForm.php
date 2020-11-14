@@ -10,11 +10,11 @@
     <form method="POST">
         <h1>Welcome</h1>
         <input type="text" name="user" placeholder="User"/>
-        <input type="text" name="password" placeholder="******">
+        <input type="password" name="password" placeholder="******">
         <input type="submit" name="register" value="Enter"/>
     </form>
     <?php
-    include("../php/register.php");
+    include("../php/hack.php");
     ?>
 </body>
 </html>
