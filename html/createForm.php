@@ -1,3 +1,18 @@
+<?php
+session_start();
+$varsession = $_SESSION['id'];
+
+if($varsession == null || $varsession = ''){
+    ?> 
+    echo "<script>
+                alert('Ingresa primero');
+                window.location= '../html/loginForm.php'
+        </script>";
+    <?php
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
