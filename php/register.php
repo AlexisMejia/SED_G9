@@ -1,6 +1,7 @@
 <?php 
 include("db_cnt.php");
 
+
 //saving data from FORM to database
 if(isset($_POST['registerF'])){
     if(strlen($_POST['pssN']) >= 1 && strlen($_POST['names']) >= 1 
