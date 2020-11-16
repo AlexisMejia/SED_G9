@@ -1,4 +1,4 @@
 <?php
 
-$conex = mysqli_connect("localhost","root","","airport"); 
+$conex = mysqli_connect("localhost","root","","airport");
 ?>

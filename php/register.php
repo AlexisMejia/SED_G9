@@ -1,39 +1,6 @@
 <?php 
 include("db_cnt.php");
 
-//saving data from register to database
-if (isset($_POST['register'])) {
-    if (strlen($_POST['user']) >= 1 && strlen($_POST['password']) >= 1) {
-        $user = trim($_POST['user']);
-        $pwd = trim($_POST['password']);
-        $pssw_cifrada = password_hash($pwd, PASSWORD_DEFAULT, );
-        $consulta = "INSERT INTO login(user, pssw) VALUES ('$user','$pssw_cifrada')";
-        $resultado = mysqli_query($conex,$consulta);
-        if ($resultado) {
-            ?> 
-            echo "<script>
-                        alert('Welcome!');
-                        window.location= 'index.php'
-                </script>";
-            <?php
-        } else {
-            ?>  
-            echo "<script>
-                        alert('Ups,something went wrong!');
-                        window.location= 'loginForm.php'
-                </script>";
-            <?php
-        }
-    }   else {
-        ?>  
-        echo "<script>
-                    alert('Please fill in all fields!');
-                    window.location= 'loginForm.php'
-            </script>";
-        <?php
-    }
-}
-
 //saving data from FORM to database
 if(isset($_POST['registerF'])){
     if(strlen($_POST['pssN']) >= 1 && strlen($_POST['names']) >= 1 
@@ -84,3 +51,6 @@ if(isset($_POST['registerF'])){
 
 
 ?>
+
+
+
