@@ -1,0 +1,34 @@
+#airportID{
+    padding: 50px 20px;
+	background-color: #ededed;
+	margin: calc(15% + 20px);
+	margin-top: 70px;
+    margin-bottom: 30px;
+    margin-left: 0;
+    width: 100%;
+    border: solid ;
+    text-align: center;
+}
+
+
+input[type='submit']{
+	background-color: #48e;
+	color: #fff;
+    width: calc(80% - 20px);
+    height: 2em;
+	margin: 0 10%;
+	margin-top: 22px;
+    border: none;   
+}
+
+input[type='button']{
+	background-color: #48e;
+	color: #fff;
+    width: 10em;
+    height: 2em;
+	margin-left: 90em;
+    margin-top: 45px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    border: none;   
+}
