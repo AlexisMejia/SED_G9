@@ -1,16 +1,5 @@
 <?php
-session_start();
-$varsession = $_SESSION['id'];
-
-if($varsession == null || $varsession = ''){
-    ?> 
-    echo "<script>
-                alert('Ingresa primero');
-                window.location= '../html/loginForm.php'
-        </script>";
-    <?php
-    die();
-}
+include("../php/lock.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +11,16 @@ if($varsession == null || $varsession = ''){
     <link href="../css/indexStyle.css" rel="stylesheet" type="text/css">
     <title>Principal View</title>
 </head>
-<?php include("../php/db_cnt.php"); include("../php/hack.php");?>
+<?php 
+include("../php/db_cnt.php"); 
+?>
 
 <body>
     <a href="createForm.php">
         <input type="button" name="save" value="Create" />
+    </a>
+    <a href="../php/bye.php">
+        <input type="button" name="save" value="Salir" />
     </a>
     <table id="airportID" width="100%">
         <thead>
