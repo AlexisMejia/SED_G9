@@ -14,10 +14,11 @@
                 from cliente
                 where estado = 1
                 and user = '".htmlentities($_POST["user"])."' 
-                and pssw = '".md5(htmlentities($_POST["pswd"]))."'";
+                and pssw = '".hash('sha256',htmlentities($_POST["pswd"]))."'";
         $myclave = mysqli_query($conex,$sql);
         $nmyclave = mysqli_num_rows($myclave);
 
+        echo $sql;
           //Si el usuario y clave ingresado son correctos (y el usuario está activo en la BD), creamos la sesión del mismo.
             if($nmyclave != 0){
                 session_start();
@@ -25,6 +26,8 @@
                 $_SESSION["autentica"] = "SIP";
                 $_SESSION["usuarioactual"] = mysqli_fetch_assoc($myclave); //nombre del usuario logueado.
                //Direccionamos a nuestra página principal del sistema.
+
+                
                 ?> 
                     echo "<script>
                             alert('Welcome!');
@@ -33,12 +36,15 @@
                 <?php
             }
             else{
-                ?> 
+
+                echo "Error al iniciar sesion";
+                header("Refresh: 5; url=../html/loginForm.php");
+                /*?> 
                     echo "<script>
                             alert("Error al iniciar sesión");
                             window.location= '../html/loginForm.php'
                         </script>";
-                <?php
+                <?php*/
             }
         }else{
             ?> 
