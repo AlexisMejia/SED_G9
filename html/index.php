@@ -12,10 +12,11 @@ include("../php/lock.php");
     <title>Principal View</title>
 </head>
 <?php 
-include("../php/db_cnt.php"); 
+include("../php/db_cnt.php");
 ?>
 
 <body>
+    <h2>Usuario: <?php echo implode($_SESSION['usuarioactual']);?></h2>
     <a href="createForm.php">
         <input type="button" name="save" value="Create" />
     </a>
@@ -25,6 +26,7 @@ include("../php/db_cnt.php");
     <table id="airportID" width="100%">
         <thead>
             <tr>
+                <th id="title">ID Formulario</th>
                 <th id="title">Passport</th>
                 <th id="title">Name</th>
                 <th id="title">Age</th>
@@ -42,10 +44,13 @@ include("../php/db_cnt.php");
         </thead>
         <thbody>
             <?php
-        $query = "SELECT * FROM form2";
-        $result_tasks = mysqli_query($conex, $query);    
+            $session = implode($_SESSION['usuarioactual']);
+            $query = "SELECT * FROM form2";
+            $result_tasks = mysqli_query($conex, $query);    
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
+
             <tr align="center">
+                <td class="info"><?php echo $row['id']; ?></td>
                 <td class="info"><?php echo $row['passp_user']; ?></td>
                 <td class="info"><?php echo $row['name_user']; ?></td>
                 <td class="info"><?php echo $row['age_user']; ?></td>
@@ -67,6 +72,7 @@ include("../php/db_cnt.php");
                     </a>
                 </td>
             </tr>
+            
             <?php } ?>
         </thbody>
     </table>

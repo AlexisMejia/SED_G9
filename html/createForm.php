@@ -40,6 +40,7 @@ include("../php/lock.php");
             Seat:<input type="text" name="seat" placeholder="Seat"/><br>
             Price: <input type="number" min="0.00" max="10000.00" step="0.01" name="price" placeholder="$0.00"/><br>
             Class: <input type="text" name="class" placeholder="Class"/><br>
+            User:<input  type="hidden" name="user" value="implode($_SESSION['usuarioactual']);"/><br>
         </fieldset>
         <input type="submit" name="registerF" value="Save"/>
     </form>
