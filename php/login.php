@@ -35,7 +35,7 @@
             else{
                 ?> 
                     echo "<script>
-                            alert("error! $myclave ");
+                            alert("Error al iniciar sesión");
                             window.location= '../html/loginForm.php'
                         </script>";
                 <?php
@@ -48,6 +48,6 @@
                 </script>";
         <?php
         }
-    mysql_close($conex);
+    mysqli_close($conex);
 
 ?>

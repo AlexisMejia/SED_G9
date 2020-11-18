@@ -1,6 +1,6 @@
 <?php 
 include("db_cnt.php");
-include("../php/hack.php");
+
 
 $pssN ='';
 $name =''; 
@@ -104,6 +104,7 @@ if (isset($_POST['update'])) {
             Seat:<input type="text" value="<?php echo $seat; ?>" name="seat" placeholder="Seat"/><br>
             Price: <input type="number" value="<?php echo $price; ?>" min="0.00" max="10000.00" step="0.01" name="price" placeholder="$0.00"/><br>
             Class: <input type="text" value="<?php echo $class; ?>" name="class" placeholder="Class"/><br>
+
         </fieldset>
         <input type="submit" name="update" value="Update"/>
     </form>
