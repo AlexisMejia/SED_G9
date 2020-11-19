@@ -2,7 +2,7 @@
 
 session_start();
 
-if($_SESSION["autentica"] != "SIP"){
+if($_SESSION["autentica"] != "SIP" || $_SESSION['rol'] != "4DM!N"){
     ?> 
     echo "<script>
                 alert('Ingresa primero');

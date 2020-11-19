@@ -22,7 +22,7 @@ if(isset($_POST['registerF'])){
         $seat = trim(htmlentities($_POST['seat']));
         $price = trim(htmlentities($_POST['price']));
         $class = trim(htmlentities($_POST['class']));
-        $query = "INSERT INTO form2(passp_user, name_user, age_user, citi_user, phone_user, pais_origen,pais_llegada,fecha_reg,hora_vuelo,asiento, precio,clase)
+        $query = "INSERT INTO cliente(passp_user, name_user, age_user, citi_user, phone_user, pais_origen,pais_llegada,fecha_reg,hora_vuelo,asiento, precio,clase)
                     VALUES ('$pssN','$name','$age','$citiz','$phone','$from','$to','$date','$time','$seat','$price','$class')";
         $resultado = mysqli_query($conex,$query);
 

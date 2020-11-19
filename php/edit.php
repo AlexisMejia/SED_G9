@@ -17,7 +17,7 @@ $class ='';
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $query = "SELECT * FROM form2 where id=$id";
+    $query = "SELECT * FROM cliente where id=$id";
     $result = mysqli_query($conex, $query);
 
     if(mysqli_num_rows($result)==1){
@@ -53,7 +53,7 @@ if (isset($_POST['update'])) {
     $price = trim(htmlentities($_POST['price']));
     $class = trim(htmlentities($_POST['class']));
 
-    $query = "UPDATE form2 set passp_user = '$pssN', name_user = '$name',age_user='$age',citi_user='$citiz',
+    $query = "UPDATE cliente set passp_user = '$pssN', name_user = '$name',age_user='$age',citi_user='$citiz',
                 phone_user='$phone',pais_origen='$from',pais_llegada='$to',fecha_reg='$date',hora_vuelo='$time',
                 asiento='$seat',precio='$price',clase='$class' WHERE id=$id";
     mysqli_query($conex, $query);

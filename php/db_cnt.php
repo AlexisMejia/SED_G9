@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$database = "airport";
+$database = "sed";
 $username = "root";
 $password = "";
 // Create connection
