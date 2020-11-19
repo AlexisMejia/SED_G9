@@ -18,29 +18,28 @@ include("../php/lock.php");
             <legend>
                 User Form
             </legend>
-            Passport Number:  <input type="text" name="pssN" placeholder="Passport Number"/><br>
-            Name:  <input type="text" name="names"placeholder="Name"/><br>
-            Age: <input type="number" name="age" placeholder="##"/><br>
-            Citizenship: <input type="text" name="citizen" placeholder="ES"/><br>
-            Phone number: <input type="text" name="phone" placeholder="000000"><br>
+            Passport Number:  <input type="text" name="pssN" maxlength="20" placeholder="Passport Number" required/><br>
+            Name:  <input type="text" name="names" maxlength="20" placeholder="Name" required/><br>
+            Age: <input type="number" name="age" min="0" max="80" maxlength="20" placeholder="##" required/><br>
+            Citizenship: <input type="text" maxlength="20" name="citizen" placeholder="ES" required/><br>
+            Phone number: <input type="text"  maxlength="20" name="phone" placeholder="000000" required><br>
         </fieldset>
         <fieldset id="fs">
             <legend>
                 Flight Form
             </legend>
-            From:<input type="text" name="cFrom" placeholder=""/><br>
-            To:<input type="text" name="cTo" placeholder=""><br>
-            Date:<input type="date" name="dateF" placeholder=""><br>
-            Time:<input type="time" name="timeF" placeholder="00:00:00"/><br>
+            From:<input type="text" maxlength="20" name="cFrom" placeholder="" required/><br>
+            To:<input type="text" maxlength="20" name="cTo" placeholder="" required><br>
+            Date:<input type="date" maxlength="20" name="dateF" placeholder="" required><br>
+            Time:<input type="time" maxlength="20" name="timeF" placeholder="00:00:00" required/><br>
         </fieldset>
         <fieldset id="fs">
             <legend>
                 Ticket Form
             </legend>
-            Seat:<input type="text" name="seat" placeholder="Seat"/><br>
-            Price: <input type="number" min="0.00" max="10000.00" step="0.01" name="price" placeholder="$0.00"/><br>
-            Class: <input type="text" name="class" placeholder="Class"/><br>
-            User:<input  type="hidden" name="user" value="implode($_SESSION['usuarioactual']);"/><br>
+            Seat:<input type="text" maxlength="20" name="seat" placeholder="Seat" required/><br>
+            Price: <input type="number" min="0.00" max="10000.00" step="0.01" maxlength="20" name="price" placeholder="$0.00" required/><br>
+            Class: <input type="text" name="class" maxlength="20" placeholder="Class" required/><br>
         </fieldset>
         <input type="submit" name="registerF" value="Save"/>
     </form>

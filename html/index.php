@@ -44,7 +44,6 @@ include("../php/db_cnt.php");
         </thead>
         <thbody>
             <?php
-            $session = implode($_SESSION['usuarioactual']);
             $query = "SELECT * FROM form2";
             $result_tasks = mysqli_query($conex, $query);    
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
@@ -72,7 +71,6 @@ include("../php/db_cnt.php");
                     </a>
                 </td>
             </tr>
-            
             <?php } ?>
         </thbody>
     </table>
