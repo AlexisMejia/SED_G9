@@ -44,7 +44,7 @@ include("../php/db_cnt.php");
         </thead>
         <thbody>
             <?php
-            $query = "SELECT * FROM form2";
+            $query = "SELECT * FROM cliente";
             $result_tasks = mysqli_query($conex, $query);    
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
 
