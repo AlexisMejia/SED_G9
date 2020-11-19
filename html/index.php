@@ -16,17 +16,15 @@ include("../php/db_cnt.php");
 ?>
 
 <body>
-    <h2>Usuario: <?php echo implode($_SESSION['usuarioactual']);?></h2>
     <a href="createForm.php">
         <input type="button" name="save" value="Create" />
     </a>
     <a href="../php/bye.php">
-        <input type="button" name="save" value="Salir" />
+        <input type="button" name="save" value="Goodbye" />
     </a>
     <table id="airportID" width="100%">
         <thead>
             <tr>
-                <th id="title">ID Formulario</th>
                 <th id="title">Passport</th>
                 <th id="title">Name</th>
                 <th id="title">Age</th>
@@ -49,7 +47,6 @@ include("../php/db_cnt.php");
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
 
             <tr align="center">
-                <td class="info"><?php echo $row['id']; ?></td>
                 <td class="info"><?php echo $row['passp_user']; ?></td>
                 <td class="info"><?php echo $row['name_user']; ?></td>
                 <td class="info"><?php echo $row['age_user']; ?></td>
@@ -64,7 +61,7 @@ include("../php/db_cnt.php");
                 <td class="info"><?php echo $row['clase']; ?></td>
                 <td class="info">
                     <a href="../php/edit.php?id=<?php echo $row['id']?>">
-                        <input type="submit" name="edit" value="Edit" />
+                        <input type="submit" name="edit" value="Update" />
                     </a>
                     <a href="../php/delete.php?id=<?php echo $row['id']?>">
                         <input type="submit" name="delete" value="Delete" />
