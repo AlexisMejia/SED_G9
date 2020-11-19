@@ -1,11 +1,17 @@
 <?php
      /* A continuación, realizamos la conexión con nuestra base de datos en MySQL */
-    $conex = mysqli_connect("localhost","root","");
-    mysqli_select_db($conex,"airport");
-
+    include("db_cnt.php");
+    $user =htmlentities($_POST["user"]);
+    $pattern = "/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/";
+    $pwd_aux = htmlentities($_POST["pswd"]);
+    $pswd = preg_match_all($pattern,$pwd_aux,$matches);
+    if(pswd !=1){
+        $pswd = $pwd_aux;
+        $pswd_hash = hash('sha256',$pswd);
+    }
     /* El query valida si el usuario ingresado existe en la base de datos. Se utiliza la función 
      htmlentities para evitar inyecciones SQL. */
-    $myusuario = mysqli_query($conex,"select user from cliente where user =  '".htmlentities($_POST["user"])."'");
+    $myusuario = mysqli_query($conex,"select user from cliente where user =  '".$user."'");
     $nmyusuario = mysqli_num_rows($myusuario);
 
      //Si existe el usuario, validamos también la contraseña ingresada y el estado del usuario...
@@ -13,12 +19,10 @@
         $sql = "select user
                 from cliente
                 where estado = 1
-                and user = '".htmlentities($_POST["user"])."' 
-                and pssw = '".hash('sha256',htmlentities($_POST["pswd"]))."'";
+                and user = '".$user."' 
+                and pssw = '".$pswd_hash."'";
         $myclave = mysqli_query($conex,$sql);
         $nmyclave = mysqli_num_rows($myclave);
-
-        echo $sql;
           //Si el usuario y clave ingresado son correctos (y el usuario está activo en la BD), creamos la sesión del mismo.
             if($nmyclave != 0){
                 session_start();
@@ -26,8 +30,6 @@
                 $_SESSION["autentica"] = "SIP";
                 $_SESSION["usuarioactual"] = mysqli_fetch_assoc($myclave); //nombre del usuario logueado.
                //Direccionamos a nuestra página principal del sistema.
-
-                
                 ?> 
                     echo "<script>
                             alert('Welcome!');
@@ -37,11 +39,11 @@
             }
             else{
 
-                echo "Error al iniciar sesion";
-                header("Refresh: 5; url=../html/loginForm.php");
+                echo "Ha ocurrido un error";
+            header("Refresh: 10; url=../HTML/loginForm.php");
                 /*?> 
                     echo "<script>
-                            alert("Error al iniciar sesión");
+                            alert('UPS, something went wrong!');
                             window.location= '../html/loginForm.php'
                         </script>";
                 <?php*/
@@ -49,7 +51,7 @@
         }else{
             ?> 
             echo "<script>
-                    alert('usuario no encontrado!');
+                    alert('Please fill out all the fields!');
                     window.location= '../html/loginForm.php'
                 </script>";
         <?php

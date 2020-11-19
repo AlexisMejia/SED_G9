@@ -40,18 +40,18 @@ if(isset($_GET['id'])){
 
 if (isset($_POST['update'])) {
     $id = $_GET['id'];
-    $pssN = trim($_POST['pssN']);
-    $name = trim($_POST['names']);
-    $age = trim($_POST['age']);
-    $citiz = trim($_POST['citizen']);
-    $phone = trim($_POST['phone']);
-    $from = trim($_POST['cFrom']);
-    $to = trim($_POST['cTo']);
-    $date= trim($_POST['dateF']);
-    $time = trim($_POST['timeF']);
-    $seat = trim($_POST['seat']);
-    $price = trim($_POST['price']);
-    $class = trim($_POST['class']);
+    $pssN = trim(htmlentities($_POST['pssN']));
+    $name = trim(htmlentities($_POST['names']));
+    $age = trim(htmlentities($_POST['age']));
+    $citiz = trim(htmlentities($_POST['citizen']));
+    $phone = trim(htmlentities($_POST['phone']));
+    $from = trim(htmlentities($_POST['cFrom']));
+    $to = trim(htmlentities($_POST['cTo']));
+    $date= trim(htmlentities($_POST['dateF']));
+    $time = trim(htmlentities($_POST['timeF']));
+    $seat = trim(htmlentities($_POST['seat']));
+    $price = trim(htmlentities($_POST['price']));
+    $class = trim(htmlentities($_POST['class']));
 
     $query = "UPDATE form2 set passp_user = '$pssN', name_user = '$name',age_user='$age',citi_user='$citiz',
                 phone_user='$phone',pais_origen='$from',pais_llegada='$to',fecha_reg='$date',hora_vuelo='$time',
@@ -82,28 +82,28 @@ if (isset($_POST['update'])) {
             <legend>
                 User Form
             </legend>
-            Passport Number:  <input type="text" value="<?php echo $pssN; ?>" name="pssN" placeholder="Passport Number"/><br>
-            Name:  <input type="text" value="<?php echo $name; ?>" name="names"placeholder="Name"/><br>
-            Age: <input type="number" value="<?php echo $age; ?>" name="age" placeholder="##"/><br>
-            Citizenship: <input type="text" value="<?php echo $citiz; ?>" name="citizen" placeholder="ES"/><br>
-            Phone number: <input type="text" value="<?php echo $phone; ?>" name="phone" placeholder="000000"><br>
+            Passport Number:  <input type="text" value="<?php echo $pssN; ?>" maxlength="20" name="pssN" placeholder="Passport Number" required/><br>
+            Name:  <input type="text" value="<?php echo $name; ?>"  maxlength="20" name="names"placeholder="Name" required/><br>
+            Age: <input type="number" value="<?php echo $age; ?>" min="0" max="80" name="age" placeholder="##" required/><br>
+            Citizenship: <input type="text" value="<?php echo $citiz; ?>" maxlength="20" name="citizen" placeholder="ES" required/><br>
+            Phone number: <input type="text" value="<?php echo $phone; ?>" maxlength="20" name="phone" placeholder="000000" required><br>
         </fieldset>
         <fieldset id="fs">
             <legend>
                 Flight Form
             </legend>
-            From:<input type="text" value="<?php echo $from; ?>" name="cFrom" placeholder=""/><br>
-            To:<input type="text" value="<?php echo $to; ?>" name="cTo" placeholder=""><br>
-            Date:<input type="date" value="<?php echo $date; ?>" name="dateF" placeholder=""><br>
-            Time:<input type="time" value="<?php echo $time; ?>" name="timeF" placeholder="00:00:00"/><br>
+            From:<input type="text" value="<?php echo $from; ?>" maxlength="20" name="cFrom" placeholder="" required/><br>
+            To:<input type="text" value="<?php echo $to; ?>" maxlength="20" name="cTo" placeholder="" required><br>
+            Date:<input type="date" value="<?php echo $date; ?>" maxlength="20" name="dateF" placeholder="" required><br>
+            Time:<input type="time" value="<?php echo $time; ?>" maxlength="20" name="timeF" placeholder="00:00:00" required/><br>
         </fieldset>
         <fieldset id="fs">
             <legend>
                 Ticket Form
             </legend>
-            Seat:<input type="text" value="<?php echo $seat; ?>" name="seat" placeholder="Seat"/><br>
-            Price: <input type="number" value="<?php echo $price; ?>" min="0.00" max="10000.00" step="0.01" name="price" placeholder="$0.00"/><br>
-            Class: <input type="text" value="<?php echo $class; ?>" name="class" placeholder="Class"/><br>
+            Seat:<input type="text" value="<?php echo $seat; ?>" maxlength="20" name="seat" placeholder="Seat"required/><br>
+            Price: <input type="number" value="<?php echo $price; ?>" maxlength="20" min="0.00" max="10000.00" step="0.01" name="price" placeholder="$0.00" required/><br>
+            Class: <input type="text" value="<?php echo $class; ?>" maxlength="20" name="class" placeholder="Class" required/><br>
 
         </fieldset>
         <input type="submit" name="update" value="Update"/>

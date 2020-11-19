@@ -9,35 +9,34 @@ if(isset($_POST['registerF'])){
     && strlen($_POST['phone']) >= 1 && strlen($_POST['cFrom']) >= 1 
     &&strlen($_POST['cTo']) >= 1 && strlen($_POST['dateF']) >= 1
     && strlen($_POST['timeF']) >= 1 && strlen($_POST['seat']) >= 1 
-    && strlen($_POST['price']) >= 1 && strlen($_POST['class']) >= 1
-    && strlen($_POST['user']) >= 1){
-        $pssN = trim($_POST['pssN']);
-        $name = trim($_POST['names']);
-        $age = trim($_POST['age']);
-        $citiz = trim($_POST['citizen']);
-        $phone = trim($_POST['phone']);
-        $from = trim($_POST['cFrom']);
-        $to = trim($_POST['cTo']);
-        $date= trim($_POST['dateF']);
-        $time = trim($_POST['timeF']);
-        $seat = trim($_POST['seat']);
-        $price = trim($_POST['price']);
-        $class = trim($_POST['class']);
-        $user = trim($_POST['user']);
-        $query = "INSERT INTO formulario(passp_user, name_user, age_user, citi_user, phone_user, pais_origen,pais_llegada,fecha_reg,hora_vuelo,asiento, precio,clase)
-                    VALUES ('$pssN','$name','$age','$citiz','$phone','$from','$to','$date','$time','$seat','$price','$class','$user')";
+    && strlen($_POST['price']) >= 1 && strlen($_POST['class']) >= 1){
+        $pssN = trim(htmlentities($_POST['pssN']));
+        $name = trim(htmlentities($_POST['names']));
+        $age = trim(htmlentities($_POST['age']));
+        $citiz = trim(htmlentities($_POST['citizen']));
+        $phone = trim(htmlentities($_POST['phone']));
+        $from = trim(htmlentities($_POST['cFrom']));
+        $to = trim(htmlentities($_POST['cTo']));
+        $date= trim(htmlentities($_POST['dateF']));
+        $time = trim(htmlentities($_POST['timeF']));
+        $seat = trim(htmlentities($_POST['seat']));
+        $price = trim(htmlentities($_POST['price']));
+        $class = trim(htmlentities($_POST['class']));
+        $query = "INSERT INTO form2(passp_user, name_user, age_user, citi_user, phone_user, pais_origen,pais_llegada,fecha_reg,hora_vuelo,asiento, precio,clase)
+                    VALUES ('$pssN','$name','$age','$citiz','$phone','$from','$to','$date','$time','$seat','$price','$class')";
         $resultado = mysqli_query($conex,$query);
+
         if ($resultado) {
             ?> 
             echo "<script>
-                        alert('¡Te has inscrito correctamente!');
+                        alert('You have registered correctly!');
                         window.location= 'index.php'
                 </script>";
             <?php
         } else {
             ?>  
             echo "<script>
-                        alert('¡Ups ha ocurrido un error!');
+                        alert('UPS, something went wrong!');
                         window.location= 'createForm.php'
                 </script>";
             <?php
@@ -45,7 +44,7 @@ if(isset($_POST['registerF'])){
     }   else {
         ?>  
         echo "<script>
-                    alert('¡Por favor complete los campos!');
+                    alert('Please fill out all the fields!');
                     window.location= 'createForm.php'
             </script>";
         <?php
