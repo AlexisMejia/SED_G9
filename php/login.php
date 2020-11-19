@@ -29,7 +29,7 @@
                             alert('UPS, something went wrong fella!');
                             window.location= '../html/loginForm.php'
                         </script>";
-        <?php;
+        <?php
     }
     /* El query valida si el usuario ingresado existe en la base de datos. Se utiliza la función 
      htmlentities para evitar inyecciones SQL. */
