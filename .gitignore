@@ -1,8 +1,0 @@
-/vendor
-.env
-composer.phar
-composer.lock
-definicion.png
-prueba.html
-/sql
-script.sql
