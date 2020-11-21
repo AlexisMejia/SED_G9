@@ -3,7 +3,7 @@ include("db_cnt.php");
 
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
-    $query = "DELETE FROM form2 WHERE id = $id";
+    $query = "DELETE FROM cliente WHERE id = $id";
     $result = mysqli_query($conex, $query);
     if($result) {
         ?>

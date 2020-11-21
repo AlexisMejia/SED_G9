@@ -12,7 +12,7 @@ include("../php/lock.php");
     <title>Principal View</title>
 </head>
 <?php 
-include("../php/db_cnt.php"); 
+include("../php/db_cnt.php");
 ?>
 
 <body>
@@ -20,7 +20,7 @@ include("../php/db_cnt.php");
         <input type="button" name="save" value="Create" />
     </a>
     <a href="../php/bye.php">
-        <input type="button" name="save" value="Salir" />
+        <input type="button" name="save" value="Goodbye" />
     </a>
     <table id="airportID" width="100%">
         <thead>
@@ -42,9 +42,10 @@ include("../php/db_cnt.php");
         </thead>
         <thbody>
             <?php
-        $query = "SELECT * FROM form2";
-        $result_tasks = mysqli_query($conex, $query);    
+            $query = "SELECT * FROM cliente";
+            $result_tasks = mysqli_query($conex, $query);    
         while($row = mysqli_fetch_assoc($result_tasks)) { ?>
+
             <tr align="center">
                 <td class="info"><?php echo $row['passp_user']; ?></td>
                 <td class="info"><?php echo $row['name_user']; ?></td>
@@ -60,7 +61,7 @@ include("../php/db_cnt.php");
                 <td class="info"><?php echo $row['clase']; ?></td>
                 <td class="info">
                     <a href="../php/edit.php?id=<?php echo $row['id']?>">
-                        <input type="submit" name="edit" value="Edit" />
+                        <input type="submit" name="edit" value="Update" />
                     </a>
                     <a href="../php/delete.php?id=<?php echo $row['id']?>">
                         <input type="submit" name="delete" value="Delete" />
