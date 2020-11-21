@@ -1,14 +1,13 @@
 ### SED_G9
 
-En este apartado se explica el proyecto de frontend para la aplicacion movil AtikApp, desarrollado por los componentes de Android Studio
-y el lenguaje de programacion Kotlin.
+This section explains the web application designed for the Security in Development Environments project, developed with the PHP programming language, and then transferred to the RHEL server to apply the appropriate security.
 
-### Run Project
+### Run Project on Windows
 
-Los pasos a seguir para la compilacion del proyecto son:
-- Levantar Atik api (instrucciones se encuentran en el submodulo de Atik api)
-- Lo necesario es descargar este repositorio para luego ser abierto desde Android Studio. Una vez abierto el proyecto en Android Studio, si llegase
-a dar un problema de compilacion, asegurarse  que su version de Android Studio este a partir de 4.0 y si no esta en esa version actualizar y
+The steps to follow for the compilation of the project are:
+- You need to download Xampp to run APACHE service,here is the link https://www.apachefriends.org/es/index.html
+- Then you'll find XAMPP in your local C drive, then you must open XAMPP Control to open the server options and in them you'll find Apache and MSQL that are the necessary to open the application. Then inside the location folder look for htdocs to clone the repository in that path and so the server will place it in the default localhost (he is in charge of opening it in any browser)
+-a dar un problema de compilacion, asegurarse  que su version de Android Studio este a partir de 4.0 y si no esta en esa version actualizar y
 limpiar el proyecto para evitar problemas de compilacion ya que hemos ocupado implementaciones recientes.
 - Como siguiente paso es correr la aplicacion en cualquier dispositivo ya que esta adaptado desde el movil mas pequeno hasta el mas grande, tomando
 en cuenta tablets
