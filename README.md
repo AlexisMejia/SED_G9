@@ -6,11 +6,10 @@ This section explains the web application designed for the Security in Developme
 
 The steps to follow for the compilation of the project are:
 - You need to download Xampp to run APACHE service,here is the link https://www.apachefriends.org/es/index.html
-- Then you'll find XAMPP in your local C drive, then you must open XAMPP Control to open the server options and in them you'll find Apache and MSQL that are the necessary to open the application. Then inside the location folder look for htdocs to clone the repository in that path and so the server will place it in the default localhost (he is in charge of opening it in any browser)
--a dar un problema de compilacion, asegurarse  que su version de Android Studio este a partir de 4.0 y si no esta en esa version actualizar y
-limpiar el proyecto para evitar problemas de compilacion ya que hemos ocupado implementaciones recientes.
-- Como siguiente paso es correr la aplicacion en cualquier dispositivo ya que esta adaptado desde el movil mas pequeno hasta el mas grande, tomando
-en cuenta tablets
+- Then you'll find XAMPP in your local C drive, then you must open `XAMPP Control` to open the server options and in them you'll find `Apache` and `MySQL` that are the necessary to open the application. Then inside the location folder look for `htdocs` to clone the repository in that path and so the server will place it in the default localhost (he is in charge of opening it in any browser)
+-If you want to see everything related to the code, you must open it in your preferred code editor (we recommend using VSCode because it is so powerful).
+-To raise the database manager in your browser just put `localhost/phpmyadmin` in the URL and then you should see this  ![Screenshot](phpmyadmin.png) 
+
 
 ### Inicio de sesion
 
@@ -21,3 +20,10 @@ atributos el inicio de sesión se hacen con admin@admin.com con contraseña admi
 
 2. usuario cliente: este es el que hace uso principal de la aplicacion, a el se le restringuen los privilegios del administrador. Para este tipo
 de usuario se puede acceder desde  el de cliente es cliente@cliente.com con contraseña cliente
+# ntn-restaurante-api
+restful api using express + mongoDB
+
+Load environment variables before running `npm start`. (Copy `.env.sample` as `.env` and change variable values <if required>)
+### Development
+1. ```npm install```
+2. ```npm start```
