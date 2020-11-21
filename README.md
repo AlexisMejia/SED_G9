@@ -8,7 +8,7 @@ The steps to follow for the compilation of the project are:
 - You need to download Xampp to run APACHE service,here is the link https://www.apachefriends.org/es/index.html
 - Then you'll find XAMPP in your local C drive, then you must open `XAMPP Control` to open the server options and in them you'll find `Apache` and `MySQL` that are the necessary to open the application. Then inside the location folder look for `htdocs` to clone the repository in that path and so the server will place it in the default localhost (he is in charge of opening it in any browser)
 -If you want to see everything related to the code, you must open it in your preferred code editor (we recommend using VSCode because it is so powerful).
--To raise the database manager in your browser just put `localhost/phpmyadmin` in the URL and then you should see this  ![Screenshot](phpmyadmin.png) 
+-To raise the database manager in your browser just put `localhost/phpmyadmin` in the URL and then you should see this  https://github.com/AlexisMejia/SED_G9/blob/master/phpmyadmin.jpg
 
 
 ### Inicio de sesion
