@@ -20,4 +20,3 @@ The steps to follow for the compilation of the project are:
 - MySQL.
 - XAMPP.
 - MariaDB.
-
