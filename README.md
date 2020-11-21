@@ -11,7 +11,7 @@ The steps to follow for the compilation of the project are:
 - To raise the database manager in your browser just put ```localhost/phpmyadmin``` in the URL and then you should see this  https://github.com/AlexisMejia/SED_G9/blob/master/phpmyadmin.jpg 
 - In the left sidebar you will find a menu with the name `New`, there you must create the database and call it ```sed```. Within them you must define the attributes of the tables```usuario``` y ```cliente```as follows https://github.com/AlexisMejia/SED_G9/blob/master/usuario.jpg , https://github.com/AlexisMejia/SED_G9/blob/master/cliente.jpg.
 - To populate the table of ```usuario``` you must do the following script https://github.com/AlexisMejia/SED_G9/tree/master/sql
-- Once the script to populate the user is done, you must place the following URL in your browser to access the project login form ```http://localhost/SED_G9/html/loginForm.php```
+- Once the script to populate the table ```usuario``` is done, you must place the following URL in your browser to access the project login form ```http://localhost/SED_G9/html/loginForm.php```
 
 ### Used tools
 - VSCode.
