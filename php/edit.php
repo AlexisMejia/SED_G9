@@ -15,6 +15,7 @@ $seat ='';
 $price ='';
 $class ='';
 
+
 if(isset($_GET['id'])){
     $id=$_GET['id'];
     $query = "SELECT * FROM cliente where id=$id";

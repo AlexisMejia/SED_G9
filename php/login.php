@@ -36,6 +36,18 @@
     $myusuario = mysqli_query($conex,"select user from usuario where user =  '".$email_p."'");
     $nmyusuario = mysqli_num_rows($myusuario);
 
+    /**
+     * 1    guillermo1
+     * guillermo2
+     * guillermo3
+     *  2   cader
+     * 3    elisa  
+     * 4    nestor
+     * 
+     * 4
+     * 4
+     */
+
      //Si existe el usuario, validamos también la contraseña ingresada y el estado del usuario...
     if($nmyusuario != 0){
         $sql = "select user
